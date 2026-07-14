@@ -1,0 +1,74 @@
+
+Add Associated Data to Customer Profile Designer OR  Extending the Customer Profile with an Offer Table
+
+=====================================================================================================================
+
+ Extending the Customer Profile with an Offer Table
+
+### Scenario
+
+Let's consider a requirement where the customer profile needs to include data from multiple tables:
+
+* **Customer**
+* **Account**
+* **Offer**
+
+Currently, only the **Customer** and **Account** tables are available in the application. 
+To support the new business requirement, we need to extend the customer profile by adding an **Offer** table.
+
+## Steps to Implement
+
+### 1. Create the Offer Data Type
+
+Create a new **Offer Data Type** to represent the Offer table.
+
+### 2. Add the Required Properties
+
+Add all the required properties to the Offer Data Type based on the business requirements.
+
+### 3. Create a Data Set
+
+Create a **Data Set** using the newly created Offer Data Type.
+
+### 4. Configure the Primary Key
+
+While creating the Data Set, a default **Key** is displayed. This can be considered the **Page Property (single record association)**.
+
+### 5. Add Additional Keys (Optional)
+
+If the requirement is to associate multiple Offer records with a Customer, add an additional **Key** to the same Data Set. This can be considered a **Page List Property (multiple record association)**.
+
+### 6. Save the Data Set
+
+Save the Data Set after completing the configuration.
+
+### 7. Add the Data Set as a Profile Data Source
+
+Navigate to:
+
+**CDH Portal → Data → Profile Data Sources**
+
+1. Click **Add** (top-right corner).
+2. Select **Data Set**.
+3. Click **Next**.
+4. Choose the newly created **Offer Data Set**.
+5. Click **Add**.
+
+The Offer Data Set is now available as a Profile Data Source.
+
+### 8. Associate the Data Set in Profile Designer
+
+Navigate to:
+
+**CDH Portal → Data → Profile Designer**
+
+1. Click **Edit**.
+2. Under the **Customer** level, click **Add Associated Data**.
+3. Select the **Offer Data Set**.
+4. Click **Add**.
+5. Save the Profile Designer configuration.
+
+After completing these steps, 
+the Offer Data Set becomes associated with the Customer profile,
+allowing Customer Decision Hub to access Offer data along with Customer and Account data for decisioning, 
+engagement policies, and strategy execution.
